@@ -1,0 +1,29 @@
+name: clone_lcwaikiki
+description: "Clone of LC Waikiki which is a well-known Turkish fashion retail brand."
+publish_to: "none"
+version: 0.1.0
+
+environment:
+  sdk: ^3.8.0
+
+dependencies:
+  badges: ^3.1.2
+  email_validator: ^3.0.0
+  flutter:
+    sdk: flutter
+  font_awesome_flutter: ^10.1.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - images/
+    - images/icons/
+    - images/anasayfa/
+    - images/kategori/
+    - images/urun/
+    - images/kategori_orta/
