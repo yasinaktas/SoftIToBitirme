@@ -34,14 +34,18 @@ class _UrunDetayState extends State<UrunDetay> {
                 GlobalState.cart.add(widget.urun);
                 ScaffoldMessenger.of(context).showSnackBar(
                   SnackBar(
-                    content: Text("${widget.urun.name} ${widget.urun.description} sepete eklendi!"),
+                    content: Text(
+                      "${widget.urun.name} ${widget.urun.description} sepete eklendi!",
+                    ),
                     duration: Duration(seconds: 2),
                   ),
                 );
               } else {
                 ScaffoldMessenger.of(context).showSnackBar(
                   SnackBar(
-                    content: Text("${widget.urun.name} ${widget.urun.description} zaten sepette!"),
+                    content: Text(
+                      "${widget.urun.name} ${widget.urun.description} zaten sepette!",
+                    ),
                     duration: Duration(seconds: 2),
                   ),
                 );
@@ -187,6 +191,11 @@ class _UrunDetayState extends State<UrunDetay> {
                             onPressed: () {
                               setState(() {
                                 widget.urun.favorited = !widget.urun.favorited;
+                                if (widget.urun.favorited) {
+                                  GlobalState.favorites.add(widget.urun);
+                                } else {
+                                  GlobalState.favorites.remove(widget.urun);
+                                }
                               });
                             },
                             icon: Icon(
